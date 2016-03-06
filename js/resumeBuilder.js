@@ -10,7 +10,7 @@ var bio = {
 	},
 	"image" : "images/nm-photo.jpg",
 	"welcomeMessage" : "Thanks for checking out my resume. I have been learning about front-end and back-end software engineering since September 2015. Since February 2016, I am now studying and building apps full-time. I am very excited to soon become a Full Stack Developer.", 
-	"skills" : ["Ruby", "Rails", "Javascript", "Web Development", "Version Control", "HTML5", "JQuery", "CSS"]
+	"skills" : ["Ruby", "Rails", "Javascript", "Web Development", "Version Control", "JQuery"]
 };
 
 bio.display = function() {
@@ -37,11 +37,9 @@ bio.display = function() {
 	$("#footerContacts").append(formattedLinkedin);
 	$("#footerContacts").append(formattedMobile);
 	$("#footerContacts").append(formattedEmail);
-
-
 	for(skill in bio.skills) {
 		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
-		$("#skills").append(formattedSkills);
+		$("#header").append(formattedSkills);
 	};
 };
 
@@ -74,12 +72,10 @@ var work = {
 work.display = function() {
 	for(job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
-		
 		var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
 		var formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
 		var formattedDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
-
 		$(".work-entry:last").append(formattedEmployer + formattedTitle);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedDescription);
@@ -111,7 +107,6 @@ projects.display = function(){
 		$(".project-entry:last").append(formattedTitle);
 		$(".project-entry:last").append(formattedDates);
 		$(".project-entry:last").append(formattedDescription);
-
 		for (image in projects.projects[proj].images) {
 			var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[proj].images[image]);
 			$(".project-entry:last").append(formattedImage);
