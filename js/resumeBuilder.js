@@ -9,7 +9,7 @@ var bio = {
     "linkedin": "linkedin.com/in/nicholasamartinez",
     "location": "SF Bay Area"
   },
-  "image": "images/nm-photo.jpg",
+  "biopic": "images/nm-photo.jpg",
   "welcomeMessage": "Thanks for checking out my resume. I have been learning about front-end and back-end software engineering since September 2015. Since February 2016, I am now studying and building apps full-time. I am very excited to soon become a Full Stack Developer.",
   "skills": ["Ruby", "Rails", "Javascript", "Web Development",
     "Version Control", "JQuery"
@@ -29,7 +29,7 @@ bio.display = function() {
   $("#topContacts").append(formattedGit);
   var formattedLoc = HTMLlocation.replace("%data%", bio.contacts.location);
   $("#topContacts").append(formattedLoc);
-  var formattedImage = HTMLbioPic.replace("%data%", bio.image);
+  var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
   $("#header").append(formattedImage);
   var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
   $("#header").append(formattedMessage);
