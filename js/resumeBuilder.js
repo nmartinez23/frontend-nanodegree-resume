@@ -138,6 +138,12 @@ var education = {
     "majors": ["Computer Technology"],
     "dates": "1998 - 2002",
     "url": "http://nmsu.edu"
+  }],
+  "onlineCourses": [{
+    "title": "Javascript Path",
+    "school": "Code School",
+    "date": "December 2015 - present",
+    "url": "http://codeschool.com"
   }]
 };
 
@@ -158,6 +164,20 @@ education.display = function() {
     $(".education-entry:last").append(formattedDates);
     $(".education-entry:last").append(formattedLocation);
     $(".education-entry:last").append(formattedMajor);
+  }
+   $(".education-entry:last").append(HTMLonlineClasses); 
+   for (var course in education.onlineCourses) {
+    var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[
+      course].title);
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[
+      course].school);
+    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[
+      course].date);
+    var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[
+      course].url);
+    $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+    $(".education-entry:last").append(formattedOnlineDates);
+    $(".education-entry:last").append(formattedURL);
   }
 };
 
